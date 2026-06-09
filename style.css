@@ -1,0 +1,466 @@
+/* ================================
+   AGRINHO 2026 — style.css
+   Guilherme José de Siqueira Martins
+   Colégio Estadual Professor Gabriel Rosa
+================================ */
+
+/* Reset e base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --verde-escuro: #1a4a2e;
+  --verde-medio: #2d7a4f;
+  --verde-claro: #5cb87a;
+  --verde-suave: #eaf6ee;
+  --terra: #8b5e3c;
+  --terra-claro: #f5ede3;
+  --amarelo: #f5c842;
+  --branco: #ffffff;
+  --cinza-claro: #f4f4f2;
+  --cinza-texto: #444;
+  --preto: #1a1a1a;
+  --font-titulo: 'Georgia', serif;
+  --font-corpo: 'Segoe UI', Arial, sans-serif;
+  --sombra: 0 4px 20px rgba(0,0,0,0.08);
+  --radius: 12px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-corpo);
+  color: var(--cinza-texto);
+  background: var(--branco);
+  line-height: 1.7;
+}
+
+/* ---- UTILITÁRIOS ---- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.centro {
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--verde-medio);
+  background: var(--verde-suave);
+  padding: 4px 14px;
+  border-radius: 50px;
+  margin-bottom: 0.75rem;
+}
+
+/* ---- HEADER ---- */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(26, 74, 46, 0.97);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--amarelo);
+}
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.45);
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amarelo);
+  border: 1.5px solid var(--amarelo);
+  padding: 4px 16px;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-family: var(--font-titulo);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  color: var(--branco);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2rem;
+}
+
+.btn-hero {
+  display: inline-block;
+  background: var(--verde-claro);
+  color: var(--branco);
+  text-decoration: none;
+  padding: 0.75rem 2.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-hero:hover {
+  background: var(--verde-medio);
+  transform: translateY(-2px);
+}
+
+/* ---- SEÇÕES ---- */
+.section {
+  padding: 5rem 0;
+}
+
+.section-verde {
+  background: var(--verde-suave);
+}
+
+.section h2 {
+  font-family: var(--font-titulo);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--verde-escuro);
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.section p {
+  font-size: 1rem;
+  color: var(--cinza-texto);
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+
+.intro-texto {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+/* ---- CARDS ---- */
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  background: var(--branco);
+  border: 1px solid #e0ece5;
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--sombra);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.93rem;
+  color: #666;
+  margin: 0;
+}
+
+/* ---- DOIS COLUNAS ---- */
+.dois-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.dois-col.invertido {
+  direction: rtl;
+}
+
+.dois-col.invertido > * {
+  direction: ltr;
+}
+
+.col-imagem img {
+  width: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+  max-height: 400px;
+  box-shadow: var(--sombra);
+}
+
+.lista-destaque {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.lista-destaque li {
+  padding: 0.45rem 0;
+  font-size: 0.97rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.lista-destaque li:last-child {
+  border-bottom: none;
+}
+
+/* ---- STEPS ---- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.step {
+  background: var(--branco);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  border: 1px solid #c8e6d0;
+  box-shadow: var(--sombra);
+}
+
+.step-num {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--verde-claro);
+  font-family: var(--font-titulo);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.step h3 {
+  font-size: 1rem;
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* ---- GALERIA ---- */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.galeria-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* ---- AUTOR ---- */
+.section-autor {
+  background: var(--terra-claro);
+}
+
+.autor-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: var(--branco);
+  border-radius: var(--radius);
+  padding: 2rem 2.5rem;
+  box-shadow: var(--sombra);
+  max-width: 700px;
+  margin: 2rem auto 0;
+  text-align: left;
+}
+
+.autor-foto {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 4px solid var(--verde-claro);
+}
+
+.autor-info h3 {
+  font-size: 1.15rem;
+  color: var(--verde-escuro);
+  margin-bottom: 0.25rem;
+}
+
+.autor-info p {
+  font-size: 0.93rem;
+  color: var(--verde-medio);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.autor-desc {
+  font-size: 0.9rem !important;
+  color: #666 !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  background: var(--verde-escuro);
+  color: rgba(255,255,255,0.75);
+  padding: 2.5rem 0;
+}
+
+.footer-logo {
+  height: 36px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.footer p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
+  max-width: none;
+  margin-bottom: 0.25rem;
+}
+
+.footer-small {
+  font-size: 0.8rem !important;
+  color: rgba(255,255,255,0.45) !important;
+}
+
+/* ---- RESPONSIVO ---- */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .dois-col {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .dois-col.invertido {
+    direction: ltr;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .autor-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
