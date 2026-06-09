@@ -1,10 +1,7 @@
 /* ================================
    AGRINHO 2026 — style.css
-   Guilherme José de Siqueira Martins
-   Colégio Estadual Professor Gabriel Rosa
 ================================ */
 
-/* Reset e base */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -29,9 +26,7 @@
   --radius: 12px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-corpo);
@@ -40,16 +35,13 @@ body {
   line-height: 1.7;
 }
 
-/* ---- UTILITÁRIOS ---- */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-.centro {
-  text-align: center;
-}
+.centro { text-align: center; }
 
 .eyebrow {
   display: inline-block;
@@ -64,7 +56,6 @@ body {
   margin-bottom: 0.75rem;
 }
 
-/* ---- HEADER ---- */
 .header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -102,11 +93,8 @@ body {
   transition: color 0.2s;
 }
 
-.nav a:hover {
-  color: var(--amarelo);
-}
+.nav a:hover { color: var(--amarelo); }
 
-/* ---- HERO ---- */
 .hero {
   position: relative;
   height: 100vh;
@@ -180,14 +168,8 @@ body {
   transform: translateY(-2px);
 }
 
-/* ---- SEÇÕES ---- */
-.section {
-  padding: 5rem 0;
-}
-
-.section-verde {
-  background: var(--verde-suave);
-}
+.section { padding: 5rem 0; }
+.section-verde { background: var(--verde-suave); }
 
 .section h2 {
   font-family: var(--font-titulo);
@@ -210,7 +192,6 @@ body {
   text-align: center;
 }
 
-/* ---- CARDS ---- */
 .cards-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -246,13 +227,8 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.card p {
-  font-size: 0.93rem;
-  color: #666;
-  margin: 0;
-}
+.card p { font-size: 0.93rem; color: #666; margin: 0; }
 
-/* ---- DOIS COLUNAS ---- */
 .dois-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -260,13 +236,8 @@ body {
   align-items: center;
 }
 
-.dois-col.invertido {
-  direction: rtl;
-}
-
-.dois-col.invertido > * {
-  direction: ltr;
-}
+.dois-col.invertido { direction: rtl; }
+.dois-col.invertido > * { direction: ltr; }
 
 .col-imagem img {
   width: 100%;
@@ -276,11 +247,7 @@ body {
   box-shadow: var(--sombra);
 }
 
-.lista-destaque {
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-}
+.lista-destaque { list-style: none; padding: 0; margin-top: 1rem; }
 
 .lista-destaque li {
   padding: 0.45rem 0;
@@ -288,11 +255,8 @@ body {
   border-bottom: 1px solid #e6e6e6;
 }
 
-.lista-destaque li:last-child {
-  border-bottom: none;
-}
+.lista-destaque li:last-child { border-bottom: none; }
 
-/* ---- STEPS ---- */
 .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -317,19 +281,9 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.step h3 {
-  font-size: 1rem;
-  color: var(--verde-escuro);
-  margin-bottom: 0.5rem;
-}
+.step h3 { font-size: 1rem; color: var(--verde-escuro); margin-bottom: 0.5rem; }
+.step p { font-size: 0.9rem; color: #666; margin: 0; }
 
-.step p {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0;
-}
-
-/* ---- GALERIA ---- */
 .galeria-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -351,10 +305,7 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
-/* ---- AUTOR ---- */
-.section-autor {
-  background: var(--terra-claro);
-}
+.section-autor { background: var(--terra-claro); }
 
 .autor-card {
   display: flex;
@@ -378,89 +329,44 @@ body {
   border: 4px solid var(--verde-claro);
 }
 
-.autor-info h3 {
-  font-size: 1.15rem;
+.autor-foto-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 4px solid var(--verde-claro);
+  background: var(--verde-suave);
   color: var(--verde-escuro);
-  margin-bottom: 0.25rem;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.autor-info p {
-  font-size: 0.93rem;
-  color: var(--verde-medio);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
+.autor-info h3 { font-size: 1.15rem; color: var(--verde-escuro); margin-bottom: 0.25rem; }
+.autor-info p { font-size: 0.93rem; color: var(--verde-medio); font-weight: 600; margin-bottom: 0.5rem; }
+.autor-desc { font-size: 0.9rem !important; color: #666 !important; font-weight: 400 !important; margin: 0 !important; }
 
-.autor-desc {
-  font-size: 0.9rem !important;
-  color: #666 !important;
-  font-weight: 400 !important;
-  margin: 0 !important;
-}
-
-/* ---- FOOTER ---- */
 .footer {
   background: var(--verde-escuro);
   color: rgba(255,255,255,0.75);
   padding: 2.5rem 0;
 }
 
-.footer-logo {
-  height: 36px;
-  object-fit: contain;
-  margin-bottom: 0.75rem;
-  filter: brightness(0) invert(1);
-  opacity: 0.8;
-}
+.footer p { font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: none; margin-bottom: 0.25rem; }
+.footer-small { font-size: 0.8rem !important; color: rgba(255,255,255,0.45) !important; }
 
-.footer p {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.75);
-  max-width: none;
-  margin-bottom: 0.25rem;
-}
-
-.footer-small {
-  font-size: 0.8rem !important;
-  color: rgba(255,255,255,0.45) !important;
-}
-
-/* ---- RESPONSIVO ---- */
 @media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-
-  .dois-col {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .dois-col.invertido {
-    direction: ltr;
-  }
-
-  .galeria-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .autor-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  .hero-title {
-    font-size: 2.2rem;
-  }
+  .nav { display: none; }
+  .dois-col { grid-template-columns: 1fr; gap: 2rem; }
+  .dois-col.invertido { direction: ltr; }
+  .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+  .autor-card { flex-direction: column; text-align: center; padding: 1.5rem; }
+  .hero-title { font-size: 2.2rem; }
 }
 
 @media (max-width: 480px) {
-  .galeria-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .steps {
-    grid-template-columns: 1fr;
-  }
+  .galeria-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
 }
